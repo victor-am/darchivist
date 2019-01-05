@@ -1,0 +1,11 @@
+# This is an example darchivist.yaml file setting up some dot files.
+# Replace this when with your own configurations.
+# ------------------------------------------------------------------
+#
+# files:
+#   tmux:
+#     file: .tmux.conf
+#     symlink_path: ~/.tmux.conf
+#   neovim:
+#     file: init.vim
+#     symlink_path: ~/.config/nvim/init.vim

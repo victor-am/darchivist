@@ -2,7 +2,8 @@ defmodule Darchivist.CLI do
   alias Darchivist.Commands
 
   @command_to_module_dictionary %{
-    "help" => Commands.Help
+    "help" => Commands.Help,
+    "init" => Commands.Init
   }
 
   def main(args \\ []) do

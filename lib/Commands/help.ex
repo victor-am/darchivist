@@ -1,7 +1,10 @@
 defmodule Darchivist.Commands.Help do
   alias Darchivist.Commands
 
-  @command_module_list [Commands.Help]
+  @command_module_list [
+    Commands.Help,
+    Commands.Init
+  ]
 
   def syntax do
     "help"
