@@ -7,6 +7,8 @@ defmodule Darchivist.Commands.Help do
     Commands.Install
   ]
 
+  @github_link "http://github.com/victor-am/darchivist"
+
   def syntax do
     "help   "
   end
@@ -16,13 +18,15 @@ defmodule Darchivist.Commands.Help do
   end
 
   def run(_params) do
+    {:ok, version} = :application.get_key(:darchivist, :vsn)
+
     header = [
-      "darchivist <INSERT VERSION HERE>",
+      "darchivist v#{version}",
       "Usage: darchivist <command> [<args>]\n",
       "Available commands:"
     ]
 
-    footer = ["\nFor full documentation see <INSERT GITHUB LINK HERE>"]
+    footer = ["\nFor full documentation see #{@github_link}"]
 
     header ++ commands_help() ++ footer
   end
