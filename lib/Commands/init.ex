@@ -1,10 +1,10 @@
 defmodule Darchivist.Commands.Init do
   @default_manifest_path "./darchivist.yaml"
 
-  alias IO.ANSI
+  alias Darchivist.Output
 
   def syntax do
-    "init"
+    "init   "
   end
 
   def description do
@@ -13,15 +13,14 @@ defmodule Darchivist.Commands.Init do
 
   def run(params) do
     output_path = get_path(params)
-    file_content = Darchivist.Files.sample_manifest
+    file_content = Darchivist.Files.sample_manifest()
 
     File.write!(output_path, file_content)
 
     [
       "Darchivist initialized successfuly!",
-      "Edit your #{ANSI.bright}darchivist.yaml#{ANSI.normal} file to set up your own configurations.",
-      "",
-      "#{ANSI.bright}Tip:#{ANSI.normal} we strongly advise using git to version your files."
+      "Edit your #{Output.bold("darchivist.yaml")} file to set up your own configurations.",
+      Output.tip("we strongly advise using git to version your files.")
     ]
   end
 

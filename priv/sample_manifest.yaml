@@ -1,11 +1,14 @@
+# ------------------------------------------------------------------
 # This is an example darchivist.yaml file setting up some dot files.
 # Replace this when with your own configurations.
 # ------------------------------------------------------------------
-#
-# files:
-#   tmux:
-#     file: .tmux.conf
-#     symlink_path: ~/.tmux.conf
-#   neovim:
-#     file: init.vim
-#     symlink_path: ~/.config/nvim/init.vim
+files:
+  # The app name is just for organization purposes
+  tmux:
+    # The "file_path" should be relative to the folder the darchivist.yaml is located
+    file_path: .tmux.conf
+    # The "symlink_path" should be absolute
+    symlink_path: /Users/my_username/.tmux.conf
+  neovim:
+    file_path: init.vim
+    symlink_path: /Users/my_username/.config/nvim/init.vim

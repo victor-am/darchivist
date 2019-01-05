@@ -3,7 +3,8 @@ defmodule Darchivist.CLI do
 
   @command_to_module_dictionary %{
     "help" => Commands.Help,
-    "init" => Commands.Init
+    "init" => Commands.Init,
+    "install" => Commands.Install
   }
 
   def main(args \\ []) do

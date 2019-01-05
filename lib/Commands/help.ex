@@ -3,11 +3,12 @@ defmodule Darchivist.Commands.Help do
 
   @command_module_list [
     Commands.Help,
-    Commands.Init
+    Commands.Init,
+    Commands.Install
   ]
 
   def syntax do
-    "help"
+    "help   "
   end
 
   def description do
@@ -17,23 +18,17 @@ defmodule Darchivist.Commands.Help do
   def run(_params) do
     header = [
       "darchivist <INSERT VERSION HERE>",
-      "Usage: darchivist <command> [<args>]",
-      "",
+      "Usage: darchivist <command> [<args>]\n",
       "Available commands:"
     ]
 
-    footer = [
-      "",
-      "For full documentation see <INSERT GITHUB LINK HERE>"
-    ]
+    footer = ["\nFor full documentation see <INSERT GITHUB LINK HERE>"]
 
     header ++ commands_help() ++ footer
   end
 
   defp commands_help do
-    Enum.map(@command_module_list, fn command ->
-      help_for(command)
-    end)
+    Enum.map(@command_module_list, &help_for/1)
   end
 
   defp help_for(command) do
