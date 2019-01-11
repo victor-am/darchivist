@@ -10,4 +10,28 @@
 - install
 
 ## Installation
-**TODO**
+**Requirements:** Erlang VM
+
+Just type in:
+```
+$ mix escript.install github victor-am/darchivist
+```
+
+## Usage
+You can see the command list using:
+
+```
+$ darchivist help
+```
+
+### Init
+The init command will create a sample `darchivist.yaml` manifest in the current directory so you can configure it according to your own dotfiles.
+```
+$ darchivist init
+```
+
+### Install
+The install command will use the information in the `darchivist.yaml` from the current directory to create the dotfiles symlinks in the locations specified on the manifest.
+```
+$ darchivist install
+```
